@@ -8,7 +8,10 @@ const validator = require('express-validator');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const passport = require('passport');
-const flash = require('flash');
+const flash = require('connect-flash');
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 
 const app = express();
@@ -30,18 +33,17 @@ app.use(session({
 	secret: 'thisisasecretkey',
 	resave: true,
 	saveInitialized:true,
-    store:new MongoStore({mongooseConnection:mongoose.connection})
+    // store:new MongoStore({mongooseConnection:mongoose.connection})
 }))
 
-app.use(passport.initialized());
+app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(flash());
 
 
-app.get('/', (req,res) =>{
-	res.render('index');
-})
+app.use('/', routes);
+app.use('/users', users);
 
 app.listen(port, () => {
 	console.log(`Server is listening on ${port}`);

@@ -7,5 +7,11 @@
 }
 
 body{
-    background-color: #FFF8DC;
+    background-color: #F8F8FF;
 }
+
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
