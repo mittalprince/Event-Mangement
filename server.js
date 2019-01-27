@@ -36,6 +36,8 @@ app.use(session({
 app.use(passport.initialized());
 app.use(passport.session());
 
+app.use(flash());
+
 
 app.get('/', (req,res) =>{
 	res.render('index');
