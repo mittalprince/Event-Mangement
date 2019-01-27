@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/',  function(req, res){
+router.get('/', function(req, res){
     res.render('index');
+});
+
+router.get('/dashboard', ensureAuthenticated, function(req, res){
+	res.render('/dashboard');
 });
 
 function ensureAuthenticated(req, res, next){
