@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const flash = require('connect-flash');
-const validator = require('express-validator');
 
-router.get('/dashboard', ensureAuthenticated, function(req, res){
+router.get('/', ensureAuthenticated, function(req, res){
 	res.render('dashboard');
 });
 
