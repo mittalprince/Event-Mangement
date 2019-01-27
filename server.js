@@ -12,6 +12,7 @@ const flash = require('connect-flash');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var dashboard = require('./routes/dashboard');
 
 
 const app = express();
@@ -43,7 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(expressValidator({
+app.use(validator({
     errorFormatter: function(param, msg, value){
         var namespace = param.split('.')
             , root = namespace.shift()
@@ -74,6 +75,8 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/dashboard', dashboard);
+
 
 app.listen(port, () => {
 	console.log(`Server is listening on ${port}`);
