@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
+const _ = requre('lowdash');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

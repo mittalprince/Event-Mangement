@@ -31,11 +31,11 @@ router.post('/register', function(req, res){
     req.checkBody('password', 'Password is required').notEmpty();
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
-    var errors = req.validationErrors();
+    var error = req.validationErrors();
 
-    if(errors){
+    if(error){
         res.render('register',{
-            errors:errors
+            error:error
         });
     } else {
         User.findOne({email:email, username:username}).then(function(currentUser){
@@ -99,7 +99,8 @@ passport.deserializeUser(function(id, done) {
 router.post('/login',
     passport.authenticate('local', {successRedirect:'/dashboard', failureRedirect:'/users/login',failureFlash: true}),
     function(req, res) {
-        res.redirect('dashboard');
+        req.flash('success_msg', 'Successfully Login');
+        res.redirect('/dashboard', {success_msg: 'Successfully Login'});
     });
 
 router.get('/logout', function(req, res){

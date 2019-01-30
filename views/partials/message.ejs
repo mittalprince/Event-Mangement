@@ -12,7 +12,9 @@
 			<% } %>
 
 			<% if( error.length > 0 ) { %>
-				<div class="alert alert-danger"><%= error %></div>
+				<div class="alert alert-danger"><% _.forEach(error, (val) => { %>
+					<%= val %>
+				<% })  %></div>
 			<% } %>
 		</div>
 	</div>
