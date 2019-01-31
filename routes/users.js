@@ -42,7 +42,7 @@ router.post('/register', function(req, res){
             if(currentUser){
                 console.log('user is already registered:',currentUser)
                 req.flash('success_msg', 'User is already registered with same username or email');
-                res.redirect('/register')
+                res.redirect('/users/register')
 
             }
             else {

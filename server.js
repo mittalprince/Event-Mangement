@@ -9,7 +9,7 @@ const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
-const _ = requre('lowdash');
+const _ = require('lowdash');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -17,7 +17,7 @@ var dashboard = require('./routes/dashboard');
 
 
 const app = express();
-var port = 8000 ;
+var port = 8001 ;
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://mittalprince:prince25@ds213755.mlab.com:13755/fq')
