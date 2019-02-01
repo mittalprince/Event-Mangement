@@ -41,8 +41,8 @@ router.post('/register', function(req, res){
         User.findOne({email:email, username:username}).then(function(currentUser){
             if(currentUser){
                 console.log('user is already registered:',currentUser)
-                req.flash('success_msg', 'User is already registered with same username or email');
-                res.redirect('/users/register')
+                // req.flash('success_msg', 'User is already registered with same username or email');
+                res.render('register', { success_msg: 'User is already registered with username or email'});
 
             }
             else {
@@ -58,9 +58,9 @@ router.post('/register', function(req, res){
                     console.log(user);
                 });
 
-                req.flash('success_msg', 'You are registered and can now login');
+                // req.flash('success_msg', 'You are registered and can now login');
 
-                res.redirect('/users/login');
+                res.render('login', { success_msg: 'You are registered and can now login'});
             }
         })
 
@@ -99,6 +99,7 @@ passport.deserializeUser(function(id, done) {
 router.post('/login',
     passport.authenticate('local', {successRedirect:'/dashboard', failureRedirect:'/users/login',failureFlash: true}),
     function(req, res) {
+        console.log(req.body);
         req.flash('success_msg', 'Successfully Login');
         res.redirect('/dashboard', {success_msg: 'Successfully Login'});
     });

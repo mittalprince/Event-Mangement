@@ -5,6 +5,6 @@ body{
 .justify-content-center{
 	padding-bottom: 50px;
 }
-.alert-danger{
+.alert-danger, .alert-success{
 	margin-top: 5px;
 }
