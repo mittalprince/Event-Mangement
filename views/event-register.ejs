@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Event-Appa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<style>
+
+h3{
+    text-align: center;
+}
+</style>
+
+<body>
+
+<%- include partials/navbar.ejs %>
+
+<%- include partials/message.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3> Event Registration Form</h3>
+        </div>
+    </div>
+    <form method="post" action="/dashbaord/eventregister">
+      <div class="form-group">
+        <label for="exampleInputName">Event Name</label>
+        <input type="text" class="form-control" id="exampleInputname"  placeholder="Enter Event Name" name="eventname">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUserName">Location</label>
+        <input type="text" class="form-control" id="exampleInputUserName"  placeholder="Enter event loation" name="location">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Event Details</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter events details.." name="details"></textarea>
+      </div>
+       <div class="form-group">
+        <label for="exampleInputPassword2">Date</label>
+        <input type="date" class="form-control" id="exampleInputPassword2" placeholder="Enter Event Date e.g 2019-02-10" name="date">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputOrganizationName">Organization</label>
+        <input type="text" class="form-control" id="exampleInputOrganizationName"  placeholder="Enter your organization name" name="organization">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputContact">Contact No.</label>
+        <input type="tel" class="form-control" id="exampleInputContact"  placeholder="Enter your Contact no" name="contact">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include partials/footer.ejs %>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/login.js"></script>
+ 
+</body>
+</html>

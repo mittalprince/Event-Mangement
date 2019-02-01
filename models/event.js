@@ -25,6 +25,10 @@ var EventSchema = mongoose.Schema({
     organization:{
         type: String,
         default: ''
+    },
+    contact: {
+        type: Number,
+        default: ''
     }
 });
 

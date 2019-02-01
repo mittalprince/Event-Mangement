@@ -14,4 +14,8 @@ function ensureAuthenticated(req, res, next){
     }
 }
 
+router.get('/eventregister', ensureAuthenticated, function(req, res){
+    res.render('event-register');
+})
+
 module.exports = router;
