@@ -1,0 +1,20 @@
+<div class="container"> 
+    <% result.forEach( (val) => { %>
+    <div class="card-group row">
+        <% val.forEach( (val2) => { %>
+        <div class="card">
+          <img class="card-img-top" src="<%= val2.eventimage %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= val2.eventname %></h5>
+            <p class="card-text">Organized by: <%= val2.organization %></p>
+            <p class="card-text"><%= val2.details %></p>
+            <p class="card-text">Location: <%= val2.location %></p>
+            <p class="card-text">On: <%= val2.date %></p>
+            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          </div>
+        </div>
+        <% }) %>
+    </div>
+    <% }) %>
+</div>
+

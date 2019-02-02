@@ -14,6 +14,7 @@ const _ = require('lowdash');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var dashboard = require('./routes/dashboard');
+var event = require('./routes/events');
 
 
 const app = express();
@@ -77,6 +78,7 @@ app.use(function(req,res,next){
 app.use('/', routes);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
+app.use('/event', event);
 
 
 app.listen(port, () => {
