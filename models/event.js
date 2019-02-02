@@ -7,7 +7,7 @@ var EventSchema = mongoose.Schema({
     },
     eventimage: {
         type: String,
-        default: ''
+        default: 'https://picsum.photos/600/300/?image=25'
     },
 
     location: {
@@ -20,7 +20,7 @@ var EventSchema = mongoose.Schema({
     },
     date: {
         type:Date,
-        default: date.now
+        default: Date()
     },
     organization:{
         type: String,
