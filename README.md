@@ -1,6 +1,9 @@
 # Event-Mangement
 > A Event management web app where user can create his own events and list all evnets globally.
 
+# Live Demo on Heroku:
+[https://event-appa.herokuapp.com/](https://event-appa.herokuapp.com/)
+
 ### Features
 * Login/Sign
 * Create Events

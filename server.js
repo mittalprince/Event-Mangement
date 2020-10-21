@@ -20,7 +20,7 @@ var event = require('./routes/events');
 
 
 const app = express();
-var port = 8001 ;
+var port = process.env.PORT || 8001 ;
 
 mongoose.Promise = global.Promise;
 const mongo_uri = process.env.mongo_uri;
