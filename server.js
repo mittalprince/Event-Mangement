@@ -1,4 +1,5 @@
 const express = require('express');
+const dotenv = require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
@@ -15,14 +16,23 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var dashboard = require('./routes/dashboard');
 var event = require('./routes/events');
+// const { config } = require('dotenv/types');
 
 
 const app = express();
 var port = 8001 ;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://mittalprince:prince25@ds213755.mlab.com:13755/fq')
+const mongo_uri = process.env.mongo_uri;
 
+const connect = mongoose.connect(mongo_uri, { useUnifiedTopology: true, useNewUrlParser: true });
+connect.then((db) =>
+{
+    console.log("Database Connected Successfully");
+}, (err) =>
+{
+    console.log("Error occur while connecting ", err);
+})
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

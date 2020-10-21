@@ -58,7 +58,7 @@ router.post('/eventregister', ensureAuthenticated, function(req,res){
         
                 newEvent.save((err, event) => {
                     if(err) throw err;
-                    console.log(event);
+                    // console.log(event);
                 });
                 res.render('dashboard',{ success_msg: "Successfully Event registered"});
             }  

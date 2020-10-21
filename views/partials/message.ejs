@@ -13,7 +13,9 @@
 
 			<% if( error.length > 0 ) { %>
 				<div><% error.forEach((val) => { %>
-					<div class=" alert alert-danger"><%= val.msg %></div>
+					<% if(val.msg){ %>
+						<div class=" alert alert-danger"><%= val.msg %></div>
+					<% } %>
 				<% })  %></div>
 			<% } %>
 		</div>

@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         for(let i=0; i<result.length; i += chunksize){
             datachunks.push(result.slice(i,i+chunksize));
         };
-        console.log(datachunks);
+        // console.log(datachunks);
         res.render('event', { result: datachunks});
     })
     // res.render('events', { data: data})
